@@ -1,4 +1,4 @@
-# vclap-lib
+# clap
 Low-level wrapper for CLAP plugin API in V.
 
 The intention of this library is to stay as close to the C version as possible

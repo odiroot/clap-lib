@@ -8,6 +8,19 @@ The biggest departure from the original code is swapping the enums for
 a set of constants. This is due to the otherwise awkward usage of V enums
 when interacting with C code (e.g. casting required in `match` blocks).
 
+## Usage
+
+Install the V package:
+
+```sh
+v install odiroot.clap
+```
+
+Use in your code with
+```v
+import odiroot.clap
+```
+
 ## Compatibility
 
 Currently supporting all non-draft APIs.

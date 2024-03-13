@@ -134,3 +134,35 @@ pub:
 }
 
 pub type PluginGUI = C.clap_plugin_gui_t
+
+@[typedef]
+struct C.clap_host_gui_t {
+pub:
+	// The host should call get_resize_hints() again.
+	// [thread-safe & !floating]
+	resize_hints_changed fn(host &clap.Host)
+	// Request the host to resize the client area to width, height.
+	// Return true if the new size is accepted, false otherwise.
+	// The host doesn't have to call set_size().
+	// Note: if not called from the main thread, then a return value simply
+	// means that the host acknowledged the request and will process it
+	// asynchronously. If the request then can't be satisfied then the host
+	// will call set_size() to revert the operation.
+	// [thread-safe & !floating]
+	request_resize fn(host &clap.Host, width u32, height u32) bool
+	// Request the host to show the plugin gui.
+	// Return true on success, false otherwise.
+	// [thread-safe]
+	request_show fn(host &clap.Host) bool
+	// Request the host to hide the plugin gui.
+	// Return true on success, false otherwise.
+	// [thread-safe]
+	request_hide fn(host &clap.Host) bool
+	// The floating window has been closed, or the connection to the gui
+	// has been lost. If was_destroyed is true, then the host must call
+	// clap_plugin_gui.destroy() to acknowledge the gui destruction.
+	// [thread-safe]
+	closed fn(host &clap.Host, was_destroyed bool)
+}
+
+pub type HostGUI = C.clap_host_gui_t

@@ -21,6 +21,10 @@ Use in your code with
 import odiroot.clap
 ```
 
+## Examples
+
+See [here](./examples) for example plugins.
+
 ## Compatibility
 
 Currently supporting all non-draft APIs.

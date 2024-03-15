@@ -4,7 +4,7 @@ import clap
 
 pub const plugin_factory_id = unsafe { (&char(C.CLAP_PLUGIN_FACTORY_ID)).vstring() }
 // In case you ever need that *exact* string in memory.
-pub const plugin_factory_id_ptr = C.CLAP_PLUGIN_FACTORY_ID
+pub const plugin_factory_id_ptr = &char(C.CLAP_PLUGIN_FACTORY_ID)
 
 // Every method must be thread-safe.
 // The host may use clap_plugin_invalidation_factory to detect filesystem

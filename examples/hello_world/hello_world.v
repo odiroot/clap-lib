@@ -48,7 +48,6 @@ fn get_factory(factory_id &char) voidptr {
 
 @[markused]
 __global clap_entry = PluginEntry{
-	// clap_version: clap.Version{}
 	init: fn (plugin_path &char) bool {
 		return true
 	}

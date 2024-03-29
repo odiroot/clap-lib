@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 * Explicitly cast plugin feature strings to prevent warnings.
+* Create a valid default `Version` object for `PluginEntry`.
+### Added
+* Utility function for verifying plugin id.
 
 ## [0.1.2] - 2024-03-13
 ### Added

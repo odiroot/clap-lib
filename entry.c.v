@@ -4,7 +4,7 @@ module clap
 @[typedef]
 struct C.clap_plugin_entry_t {
 pub:
-	clap_version Version
+	clap_version Version = Version{}
 	// This function must be called first, and can only be called once.
 	// It should be as fast as possible, in order to perform a very quick
 	// scan of the plugin descriptors.

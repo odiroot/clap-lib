@@ -17,10 +17,12 @@ pub const ext_timer_support = unsafe { (&char(C.CLAP_EXT_TIMER_SUPPORT)).vstring
 pub const ext_thread_check = unsafe { (&char(C.CLAP_EXT_THREAD_CHECK)).vstring() }
 pub const ext_thread_pool = unsafe { (&char(C.CLAP_EXT_THREAD_POOL)).vstring() }
 pub const ext_voice_info = unsafe { (&char(C.CLAP_EXT_VOICE_INFO)).vstring() }
+pub const ext_cv = unsafe { (&char(C.CLAP_EXT_CV)).vstring() }
 
 pub const extensions = [
 	ext_audio_ports,
 	ext_audio_ports_config,
+	ext_cv,
 	ext_event_registry,
 	ext_gui,
 	ext_latency,

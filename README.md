@@ -39,7 +39,6 @@ Still missing:
  - ext/draft/extensible-audio-ports.h
  - ext/draft/midi-mappings.h
  - ext/draft/param-indication.h
- - ext/draft/preset-load.h
  - ext/draft/remote-controls.h
  - ext/draft/resource-directory.h
  - ext/draft/state-context.h

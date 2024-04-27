@@ -31,7 +31,6 @@ Currently supporting all non-draft APIs.
 
 Still missing:
 
- - factory/draft/plugin-invalidation.h
  - ext/draft/ambisonic.h
  - ext/draft/audio-ports-activation.h
  - ext/draft/check-for-update.h

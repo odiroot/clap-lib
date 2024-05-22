@@ -27,10 +27,5 @@ pub:
 	request_callback fn (host &Host)
 }
 
-// XXX: Workaround because:
-// pub type Host = C.clap_host_t
-// doesn't pass the @[heap] flag.
-@[heap]
-pub struct Host {
-	C.clap_host_t
-}
+pub type Host = C.clap_host_t
+

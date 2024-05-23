@@ -82,11 +82,9 @@ pub:
 	cookie voidptr
 	// The display name. eg: "Volume". This does not need to be unique.
 	// Do not include the module text in this.
-	// Max length is clap.name_size!
-	name &char
+	name clap.Name
 	// The module path containing the param, eg: "Oscillators/Wavetable 1".
-	// Max length is clap.path_size!
-	@module &char
+	@module clap.Path
 
 	min_value     f64
 	max_value     f64

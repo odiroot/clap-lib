@@ -5,7 +5,7 @@ import clap
 @[typedef]
 struct C.clap_note_name_t {
 pub:
-	name    [clap.name_size]char
+	name    clap.Name
 	port    i16 // -1 for every port .
 	key     i16 // -1 for every key.
 	channel i16 // -1 for every channel.

@@ -22,7 +22,7 @@ pub const ext_audio_ports_config_info = unsafe { (&char(C.CLAP_EXT_AUDIO_PORTS_C
 struct C.clap_audio_ports_config_t {
 pub:
 	id   clap.Id
-	name &char // Max length clap.name_size!
+	name clap.Name
 
 	input_port_count  u32
 	output_port_count u32

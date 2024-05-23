@@ -25,7 +25,7 @@ pub mut:
 	// id identifies a port and must be stable.
 	// id may overlap between input and output ports.
 	id   clap.Id
-	name [clap.name_size]char // Displayable name.
+	name clap.Name // Displayable name.
 
 	flags         u32
 	channel_count u32

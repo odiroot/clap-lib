@@ -26,7 +26,7 @@ pub mut:
 	id                 clap.Id
 	supported_dialects u32 // Bitfield, see ClapNoteDialect.
 	preferred_dialect  u32 // One value of ClapNoteDialect.
-	name               [clap.name_size]char // Displayable name.
+	name               clap.Name // Displayable name.
 }
 
 pub type NotePortInfo = C.clap_note_port_info_t

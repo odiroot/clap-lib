@@ -19,6 +19,7 @@ pub const ext_thread_pool = unsafe { (&char(C.CLAP_EXT_THREAD_POOL)).vstring() }
 pub const ext_voice_info = unsafe { (&char(C.CLAP_EXT_VOICE_INFO)).vstring() }
 pub const ext_cv = unsafe { (&char(C.CLAP_EXT_CV)).vstring() }
 pub const ext_preset_load = unsafe { (&char(C.CLAP_EXT_PRESET_LOAD)).vstring() }
+pub const ext_tuning = unsafe { (&char(C.CLAP_EXT_TUNING)).vstring() }
 
 pub const extensions = [
 	ext_audio_ports,
@@ -39,5 +40,6 @@ pub const extensions = [
 	ext_timer_support,
 	ext_thread_check,
 	ext_thread_pool,
+	ext_tuning,
 	ext_voice_info,
 ]

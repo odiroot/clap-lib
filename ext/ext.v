@@ -20,6 +20,7 @@ pub const ext_voice_info = unsafe { (&char(C.CLAP_EXT_VOICE_INFO)).vstring() }
 pub const ext_cv = unsafe { (&char(C.CLAP_EXT_CV)).vstring() }
 pub const ext_preset_load = unsafe { (&char(C.CLAP_EXT_PRESET_LOAD)).vstring() }
 pub const ext_tuning = unsafe { (&char(C.CLAP_EXT_TUNING)).vstring() }
+pub const ext_remote_controls = unsafe { (&char(C.CLAP_EXT_REMOTE_CONTROLS)).vstring() }
 
 pub const extensions = [
 	ext_audio_ports,
@@ -34,6 +35,7 @@ pub const extensions = [
 	ext_params,
 	ext_posix_fd_support,
 	ext_preset_load,
+	ext_remote_controls,
 	ext_render,
 	ext_state,
 	ext_tail,

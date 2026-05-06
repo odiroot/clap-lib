@@ -1,4 +1,4 @@
-import clap
+module clap
 
 fn test_default_version_exposed() {
 	assert clap.version.major == 1

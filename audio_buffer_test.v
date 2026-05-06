@@ -1,4 +1,4 @@
-import clap
+module clap
 
 // Verify we know how to pass audio data buffer to C and read it too.
 fn test_smoke() {

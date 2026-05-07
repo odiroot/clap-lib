@@ -46,6 +46,3 @@ Still missing:
  - ext/draft/surround.h
  - ext/draft/track-info.h
  - ext/draft/transport-control.h
- - ext/draft/triggers.h
-
-

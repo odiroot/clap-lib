@@ -1,5 +1,5 @@
-import odiroot.clap { Host, Plugin, PluginDescriptor, PluginEntry, Process, ProcessStatus }
-import odiroot.clap.factory { PluginFactory }
+import clap { Host, Plugin, PluginDescriptor, PluginEntry, Process, ProcessStatus }
+import clap.factory { PluginFactory }
 
 const plugin_features = [
 	clap.feature_instrument,

@@ -33,8 +33,9 @@ Still missing:
 
  - ext/draft/check-for-update.h
  - ext/draft/configurable-audio-ports.h
+ - ext/draft/context-menu.h
+ - ext/draft/extensible-audio-ports.h
  - ext/draft/resource-directory.h
  - ext/draft/state-context.h
  - ext/draft/surround.h
- - ext/draft/track-info.h
  - ext/draft/transport-control.h

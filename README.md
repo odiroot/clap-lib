@@ -31,7 +31,6 @@ Currently supporting all non-draft APIs.
 
 Still missing:
 
- - ext/draft/audio-ports-activation.h
  - ext/draft/check-for-update.h
  - ext/draft/configurable-audio-ports.h
  - ext/draft/context-menu.h

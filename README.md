@@ -33,9 +33,6 @@ Still missing:
 
  - ext/draft/check-for-update.h
  - ext/draft/configurable-audio-ports.h
- - ext/draft/context-menu.h
- - ext/draft/extensible-audio-ports.h
- - ext/draft/midi-mappings.h
  - ext/draft/param-indication.h
  - ext/draft/resource-directory.h
  - ext/draft/state-context.h

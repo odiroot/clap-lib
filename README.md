@@ -33,7 +33,6 @@ Still missing:
 
  - factory/draft/plugin-invalidation.h
  - factory/draft/preset-discovery.h
- - ext/draft/ambisonic.h
  - ext/draft/audio-ports-activation.h
  - ext/draft/check-for-update.h
  - ext/draft/configurable-audio-ports.h

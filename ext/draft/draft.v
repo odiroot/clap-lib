@@ -16,7 +16,6 @@ pub const ext_resource_directory = unsafe { (&char(C.CLAP_EXT_RESOURCE_DIRECTORY
 pub const ext_state_context = unsafe { (&char(C.CLAP_EXT_STATE_CONTEXT)).vstring() }
 pub const ext_surround = unsafe { (&char(C.CLAP_EXT_SURROUND)).vstring() }
 pub const ext_triggers = unsafe { (&char(C.CLAP_EXT_TRIGGERS)).vstring() }
-pub const ext_transport_control = unsafe { (&char(C.CLAP_EXT_TRANSPORT_CONTROL)).vstring() }
 
 pub const draft_extensions = [
 	ext_ambisonic,
@@ -35,5 +34,4 @@ pub const draft_extensions = [
 	ext_state_context,
 	ext_surround,
 	ext_triggers,
-	ext_transport_control,
 ]

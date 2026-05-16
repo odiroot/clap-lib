@@ -36,6 +36,5 @@ Still missing:
  - ext/draft/context-menu.h
  - ext/draft/extensible-audio-ports.h
  - ext/draft/resource-directory.h
- - ext/draft/state-context.h
  - ext/draft/surround.h
  - ext/draft/transport-control.h

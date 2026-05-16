@@ -27,9 +27,4 @@ See [here](./examples) for example plugins.
 
 ## Compatibility
 
-~~Currently supporting all APIs in CLAP v1.1.10.~~
-
-Missing APIs:
-
-- ext/draft/check-for-update.h
-- ext/draft/transport-control.h
+Currently supporting all APIs in CLAP v1.1.10.

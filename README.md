@@ -33,7 +33,6 @@ Still missing:
 
  - ext/draft/check-for-update.h
  - ext/draft/configurable-audio-ports.h
- - ext/draft/param-indication.h
  - ext/draft/resource-directory.h
  - ext/draft/state-context.h
  - ext/draft/surround.h

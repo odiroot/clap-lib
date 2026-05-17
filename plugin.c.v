@@ -40,11 +40,11 @@ pub:
 	// If init returns false, the host must destroy the plugin instance.
 	// If init returns true, then the plugin is initialized and in the deactivated state.
 	// [main-thread]
-	init             fn (plugin &Plugin) bool
+	init fn (plugin &Plugin) bool
 	// Free the plugin and its resources.
 	// It is required to deactivate the plugin prior to this call.
 	// [main-thread & !active]
-	destroy          fn (plugin &Plugin)
+	destroy fn (plugin &Plugin)
 	// Activate and deactivate the plugin.
 	// In this call the plugin may allocate memory and prepare everything needed for the process
 	// call. The process's sample rate will be constant and process's frame count will included in
@@ -52,34 +52,34 @@ pub:
 	// Once activated the latency and port configuration must remain constant, until deactivation.
 	// Returns true on success.
 	// [main-thread & !active_state]
-	activate         fn (plugin &Plugin, sample_rate f64, min_frames_count u32, max_frames_count u32) bool
+	activate fn (plugin &Plugin, sample_rate f64, min_frames_count u32, max_frames_count u32) bool
 	// [main-thread & active_state]
-	deactivate       fn (plugin &Plugin)
+	deactivate fn (plugin &Plugin)
 	// Call start processing before processing.
 	// Returns true on success.
 	// [audio-thread & active_state & !processing_state]
 	start_processing fn (plugin &Plugin) bool
 	// Call stop processing before sending the plugin to sleep.
 	// [audio-thread & active_state & processing_state]
-	stop_processing  fn (plugin &Plugin)
+	stop_processing fn (plugin &Plugin)
 	// - Clears all buffers, performs a full reset of the processing state and kills all voices.
 	// [audio-thread & active_state]
-	reset            fn (plugin &Plugin)
+	reset fn (plugin &Plugin)
 	// Process audio, events, etc.
 	// All the pointers coming from clap_process_t and its nested attributes,
 	// are valid until process() returns.
 	// [audio-thread & active_state & processing_state]
-	process          fn (plugin &Plugin, process &Process) ProcessStatus
+	process fn (plugin &Plugin, process &Process) ProcessStatus
 	// Query an extension.
 	// The returned pointer is owned by the plugin.
 	// It is forbidden to call it before plugin->init().
 	// You can call it within plugin->init() call, and after.
 	// [thread-safe]
-	get_extension    fn (plugin &Plugin, id &char) voidptr
+	get_extension fn (plugin &Plugin, id &char) voidptr
 	// Called by the host on the main thread in response to a previous call to:
 	//   host.request_callback(host);
 	// [main-thread]
-	on_main_thread   fn (plugin &Plugin)
+	on_main_thread fn (plugin &Plugin)
 }
 
 pub type Plugin = C.clap_plugin_t

@@ -1,5 +1,8 @@
-import odiroot.clap { Host, Plugin, PluginDescriptor, PluginEntry, Process, ProcessStatus }
-import odiroot.clap.factory { PluginFactory }
+@[has_globals]
+module main
+
+import clap { Host, Plugin, PluginDescriptor, PluginEntry, Process, ProcessStatus }
+import clap.factory { PluginFactory }
 
 const plugin_features = [
 	clap.feature_instrument,
@@ -7,12 +10,12 @@ const plugin_features = [
 ]!
 
 const plugin_descriptor = PluginDescriptor{
-	id: c'org.example.hello_world'
-	name: c'Hello World Plugin'
-	vendor: c'Acme'
-	version: c'1.0.0'
+	id:          c'org.example.hello_world'
+	name:        c'Hello World Plugin'
+	vendor:      c'Acme'
+	version:     c'1.0.0'
 	description: c'Absolutely minimal CLAP plugin'
-	features: voidptr(&plugin_features[0])
+	features:    voidptr(&plugin_features[0])
 }
 
 @[heap]
@@ -46,7 +49,7 @@ fn HelloWorldPlugin.get_extension(cp &Plugin, id &char) voidptr {
 }
 
 const plugin_factory = PluginFactory{
-	get_plugin_count: fn (f &PluginFactory) u32 {
+	get_plugin_count:      fn (f &PluginFactory) u32 {
 		return 1
 	}
 	get_plugin_descriptor: fn (f &PluginFactory, index u32) &PluginDescriptor {
@@ -55,7 +58,7 @@ const plugin_factory = PluginFactory{
 		}
 		return &plugin_descriptor
 	}
-	create_plugin: fn (f &PluginFactory, host &Host, plugin_id &char) &Plugin {
+	create_plugin:         fn (f &PluginFactory, host &Host, plugin_id &char) &Plugin {
 		if !clap.version_is_compatible(host.clap_version) {
 			return unsafe { nil }
 		}
@@ -66,18 +69,18 @@ const plugin_factory = PluginFactory{
 		// Clap plugin envelope.
 		hwp := HelloWorldPlugin{}
 		return &Plugin{
-			desc: &plugin_descriptor
-			plugin_data: &hwp // Actual plugin implementation.
-			init: HelloWorldPlugin.init
-			destroy: HelloWorldPlugin.noop
-			activate: HelloWorldPlugin.activate
-			deactivate: HelloWorldPlugin.noop
+			desc:             &plugin_descriptor
+			plugin_data:      &hwp // Actual plugin implementation.
+			init:             HelloWorldPlugin.init
+			destroy:          HelloWorldPlugin.noop
+			activate:         HelloWorldPlugin.activate
+			deactivate:       HelloWorldPlugin.noop
 			start_processing: HelloWorldPlugin.start_processing
-			stop_processing: HelloWorldPlugin.noop
-			reset: HelloWorldPlugin.noop
-			process: HelloWorldPlugin.process
-			get_extension: HelloWorldPlugin.get_extension
-			on_main_thread: HelloWorldPlugin.noop
+			stop_processing:  HelloWorldPlugin.noop
+			reset:            HelloWorldPlugin.noop
+			process:          HelloWorldPlugin.process
+			get_extension:    HelloWorldPlugin.get_extension
+			on_main_thread:   HelloWorldPlugin.noop
 		}
 	}
 }
@@ -93,9 +96,9 @@ fn get_factory(factory_id &char) voidptr {
 
 @[markused]
 __global clap_entry = PluginEntry{
-	init: fn (plugin_path &char) bool {
+	init:        fn (plugin_path &char) bool {
 		return true
 	}
-	deinit: fn () {}
+	deinit:      fn () {}
 	get_factory: get_factory
 }

@@ -32,8 +32,7 @@ struct C.clap_host_thread_pool_t {
 	// The host should check that the plugin is within the process call,
 	// and if not, reject the exec request.
 	// [audio-thread]
-	request_exec fn(host &clap.Host, num_tasks u32) bool
+	request_exec fn (host &clap.Host, num_tasks u32) bool
 }
 
 pub type HostThreadPool = C.clap_host_thread_pool_t
-

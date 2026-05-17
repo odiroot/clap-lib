@@ -27,29 +27,4 @@ See [here](./examples) for example plugins.
 
 ## Compatibility
 
-Currently supporting all non-draft APIs.
-
-Still missing:
-
- - factory/draft/plugin-invalidation.h
- - factory/draft/preset-discovery.h
- - ext/draft/ambisonic.h
- - ext/draft/audio-ports-activation.h
- - ext/draft/check-for-update.h
- - ext/draft/configurable-audio-ports.h
- - ext/draft/context-menu.h
- - ext/draft/cv.h
- - ext/draft/extensible-audio-ports.h
- - ext/draft/midi-mappings.h
- - ext/draft/param-indication.h
- - ext/draft/preset-load.h
- - ext/draft/remote-controls.h
- - ext/draft/resource-directory.h
- - ext/draft/state-context.h
- - ext/draft/surround.h
- - ext/draft/track-info.h
- - ext/draft/transport-control.h
- - ext/draft/triggers.h
- - ext/draft/tuning.h
-
-
+Currently supporting all APIs in CLAP v1.1.10.

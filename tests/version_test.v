@@ -9,4 +9,3 @@ fn test_default_version_exposed() {
 fn test_current_version_compatible() {
 	assert clap.version_is_compatible(clap.version)
 }
-

@@ -55,6 +55,7 @@
 
 #include "ext/draft/ambisonic.h"
 #include "ext/draft/audio-ports-activation.h"
+#include "ext/draft/check-for-update.h"
 #include "ext/draft/context-menu.h"
 #include "ext/draft/cv.h"
 #include "ext/draft/midi-mappings.h"
@@ -65,6 +66,7 @@
 #include "ext/draft/state-context.h"
 #include "ext/draft/surround.h"
 #include "ext/draft/track-info.h"
+#include "ext/draft/transport-control.h"
 #include "ext/draft/triggers.h"
 #include "ext/draft/tuning.h"
 #include "ext/draft/configurable-audio-ports.h"

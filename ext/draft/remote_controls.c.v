@@ -7,7 +7,8 @@ import clap
 // This is done by providing a set of remote control pages organized by section.
 // A page contains up to 8 controls, which references parameters using param_id.
 
-pub const remote_controls_count = C.CLAP_REMOTE_CONTROLS_COUNT
+// C.CLAP_REMOTE_CONTROLS_COUNT but V compiler has problems reading that.
+pub const remote_controls_count = 8
 
 @[typedef]
 struct C.clap_remote_controls_page_t {

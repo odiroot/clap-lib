@@ -6,7 +6,7 @@ pub const plugin_invalidation_factory_id = unsafe { (&char(C.CLAP_PLUGIN_INVALID
 struct C.clap_plugin_invalidation_source_t {
 pub:
 	directory      &char // absolute path
-	filename_glob  &char // globing pattern, e.g. "*.dll"
+	filename_glob  &char // globbing pattern, e.g. "*.dll"
 	recursive_scan bool
 }
 

@@ -15,16 +15,18 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
       - name: Setup V
         uses: vlang/setup-v@v1.4
         with:
           check-latest: false
           stable: true
 
+      - uses: actions/checkout@v4
+        with:
+          path: clap
+
       - name: Run tests
         run: |
           mkdir -p ~/.vmodules
           ln -s $(pwd) ~/.vmodules/clap
-          v test .
+          v test clap

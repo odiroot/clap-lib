@@ -5,11 +5,11 @@ import clap
 @[typedef]
 struct C.clap_audio_port_configuration_request_t {
 pub:
-	is_input       bool
-	port_index     u32
-	channel_count  u32
-	port_type      &char
-	port_details   voidptr
+	is_input      bool
+	port_index    u32
+	channel_count u32
+	port_type     &char
+	port_details  voidptr
 }
 
 pub type AudioPortConfigurationRequest = C.clap_audio_port_configuration_request_t

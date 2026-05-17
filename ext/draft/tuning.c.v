@@ -30,7 +30,7 @@ struct C.clap_plugin_tuning_t {
 pub:
 	// Called when a tuning is added or removed from the pool.
 	// [main-thread]
-	changed fn(plugin &clap.Plugin)
+	changed fn (plugin &clap.Plugin)
 }
 
 pub type PluginTuning = C.clap_plugin_tuning_t
@@ -48,17 +48,17 @@ pub:
 	// process block.
 	// should_play(...) should be checked before calling this function.
 	// [audio-thread & in-process]
-	get_relative fn(host &clap.Host, tuning_id clap.Id, channel int, key int, sample_offset u32) f64
+	get_relative fn (host &clap.Host, tuning_id clap.Id, channel int, key int, sample_offset u32) f64
 	// Returns true if the note should be played.
 	// [audio-thread & in-process]
-	should_play fn(host &clap.Host, tuning_id clap.Id, channel int, key int) bool
+	should_play fn (host &clap.Host, tuning_id clap.Id, channel int, key int) bool
 	// Returns the number of tunings in the pool.
 	// [main-thread]
-	get_tuning_count fn(host &clap.Host) u32
+	get_tuning_count fn (host &clap.Host) u32
 	// Gets info about a tuning.
 	// Returns true on success and stores the result into info.
 	// [main-thread]
-	get_info fn(host &clap.Host, tuning_index u32, info &TuningInfo) bool
+	get_info fn (host &clap.Host, tuning_index u32, info &TuningInfo) bool
 }
 
 pub type HostTuning = C.clap_host_tuning_t

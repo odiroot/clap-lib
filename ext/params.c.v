@@ -165,10 +165,10 @@ struct C.clap_host_params_t {
 pub:
 	// Rescan the full list of parameters according to the flags.
 	// [main-thread]
-	rescan fn(host &clap.Host, flags ParamRescanFlags)
+	rescan fn (host &clap.Host, flags ParamRescanFlags)
 	// Clears references to a parameter.
 	// [main-thread]
-	clear fn(host &clap.Host, param_id clap.Id, flags ParamClearFlags)
+	clear fn (host &clap.Host, param_id clap.Id, flags ParamClearFlags)
 	// Request a parameter flush.
 	// The host will then schedule a call to either:
 	// - clap_plugin.process()
@@ -177,8 +177,7 @@ pub:
 	// an [audio-thread] as the plugin would already be within process()
 	// or flush().
 	// [thread-safe,!audio-thread]
-	request_flush fn(host &clap.Host)
+	request_flush fn (host &clap.Host)
 }
 
 pub type HostParams = C.clap_host_params_t
-

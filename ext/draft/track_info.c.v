@@ -12,11 +12,11 @@ pub const track_info_is_for_master = u64(1 << 5)
 @[typedef]
 struct C.clap_track_info_t {
 pub:
-	flags              u64
-	name               clap.Name
-	color              clap.Color
+	flags               u64
+	name                clap.Name
+	color               clap.Color
 	audio_channel_count int
-	audio_port_type    &char
+	audio_port_type     &char
 }
 
 pub type TrackInfo = C.clap_track_info_t

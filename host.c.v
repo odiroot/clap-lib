@@ -28,4 +28,3 @@ pub:
 }
 
 pub type Host = C.clap_host_t
-

@@ -14,5 +14,3 @@ pub:
 }
 
 pub type HostEventRegistry = C.clap_host_event_registry_t
-
-

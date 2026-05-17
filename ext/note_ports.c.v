@@ -24,8 +24,8 @@ pub mut:
 	// id identifies a port and must be stable.
 	// id may overlap between input and output ports.
 	id                 clap.Id
-	supported_dialects u32 // Bitfield, see ClapNoteDialect.
-	preferred_dialect  u32 // One value of ClapNoteDialect.
+	supported_dialects u32       // Bitfield, see ClapNoteDialect.
+	preferred_dialect  u32       // One value of ClapNoteDialect.
 	name               clap.Name // Displayable name.
 }
 

@@ -40,10 +40,10 @@ struct C.clap_host_thread_check_t {
 pub:
 	// Returns true if "this" thread is the main thread.
 	// [thread-safe]
-	is_main_thread fn(host &clap.Host) bool
+	is_main_thread fn (host &clap.Host) bool
 	// Returns true if "this" thread is one of the audio threads.
 	// [thread-safe]
-	is_audio_thread fn(host &clap.Host) bool
+	is_audio_thread fn (host &clap.Host) bool
 }
 
 pub type HostThreadCheck = C.clap_host_thread_check_t

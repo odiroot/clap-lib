@@ -30,17 +30,17 @@ pub type PluginId = C.clap_plugin_id_t
 @[typedef]
 struct C.clap_preset_discovery_metadata_receiver_t {
 pub:
-	receiver_data   voidptr
-	on_error        fn (receiver &MetadataReceiver, os_error int, error_message &char)
-	begin_preset    fn (receiver &MetadataReceiver, name &char, load_key &char) bool
-	add_plugin_id   fn (receiver &MetadataReceiver, plugin_id &PluginId)
+	receiver_data    voidptr
+	on_error         fn (receiver &MetadataReceiver, os_error int, error_message &char)
+	begin_preset     fn (receiver &MetadataReceiver, name &char, load_key &char) bool
+	add_plugin_id    fn (receiver &MetadataReceiver, plugin_id &PluginId)
 	set_soundpack_id fn (receiver &MetadataReceiver, soundpack_id &char)
-	set_flags       fn (receiver &MetadataReceiver, flags u32)
-	add_creator     fn (receiver &MetadataReceiver, creator &char)
-	set_description fn (receiver &MetadataReceiver, description &char)
-	set_timestamps  fn (receiver &MetadataReceiver, creation_time Timestamp, modification_time Timestamp)
-	add_feature     fn (receiver &MetadataReceiver, feature &char)
-	add_extra_info  fn (receiver &MetadataReceiver, key &char, value &char)
+	set_flags        fn (receiver &MetadataReceiver, flags u32)
+	add_creator      fn (receiver &MetadataReceiver, creator &char)
+	set_description  fn (receiver &MetadataReceiver, description &char)
+	set_timestamps   fn (receiver &MetadataReceiver, creation_time Timestamp, modification_time Timestamp)
+	add_feature      fn (receiver &MetadataReceiver, feature &char)
+	add_extra_info   fn (receiver &MetadataReceiver, key &char, value &char)
 }
 
 pub type MetadataReceiver = C.clap_preset_discovery_metadata_receiver_t
@@ -58,10 +58,10 @@ pub type Filetype = C.clap_preset_discovery_filetype_t
 @[typedef]
 struct C.clap_preset_discovery_location_t {
 pub:
-	flags    u32    // see flags_* constants
-	name     &char  // name of this location
-	kind     u32    // see location_kind_*
-	location &char  // path or null for PLUGIN kind
+	flags    u32   // see flags_* constants
+	name     &char // name of this location
+	kind     u32   // see location_kind_*
+	location &char // path or null for PLUGIN kind
 }
 
 pub type Location = C.clap_preset_discovery_location_t
@@ -69,13 +69,13 @@ pub type Location = C.clap_preset_discovery_location_t
 @[typedef]
 struct C.clap_preset_discovery_soundpack_t {
 pub:
-	flags            u32        // see flags_* constants
-	id               &char      // sound pack identifier
-	name             &char      // name of this sound pack
-	description      &char      // optional
-	homepage_url     &char      // optional
-	vendor           &char      // optional
-	image_path       &char      // optional
+	flags             u32       // see flags_* constants
+	id                &char     // sound pack identifier
+	name              &char     // name of this sound pack
+	description       &char     // optional
+	homepage_url      &char     // optional
+	vendor            &char     // optional
+	image_path        &char     // optional
 	release_timestamp Timestamp // CLAP_TIMESTAMP_UNKNOWN if unavailable
 }
 
@@ -108,16 +108,16 @@ pub type Provider = C.clap_preset_discovery_provider_t
 @[typedef]
 struct C.clap_preset_discovery_indexer_t {
 pub:
-	clap_version     clap.Version
-	name             &char
-	vendor           &char // optional
-	url              &char // optional
-	version          &char // optional
-	indexer_data     voidptr
-	declare_filetype fn (indexer &Indexer, filetype &Filetype) bool
-	declare_location fn (indexer &Indexer, location &Location) bool
+	clap_version      clap.Version
+	name              &char
+	vendor            &char // optional
+	url               &char // optional
+	version           &char // optional
+	indexer_data      voidptr
+	declare_filetype  fn (indexer &Indexer, filetype &Filetype) bool
+	declare_location  fn (indexer &Indexer, location &Location) bool
 	declare_soundpack fn (indexer &Indexer, soundpack &Soundpack) bool
-	get_extension    fn (indexer &Indexer, extension_id &char) voidptr
+	get_extension     fn (indexer &Indexer, extension_id &char) voidptr
 }
 
 pub type Indexer = C.clap_preset_discovery_indexer_t
@@ -125,9 +125,9 @@ pub type Indexer = C.clap_preset_discovery_indexer_t
 @[typedef]
 struct C.clap_preset_discovery_factory_t {
 pub:
-	count           fn (factory &Factory) u32
-	get_descriptor  fn (factory &Factory, index u32) &ProviderDescriptor
-	create          fn (factory &Factory, indexer &Indexer, provider_id &char) &Provider
+	count          fn (factory &Factory) u32
+	get_descriptor fn (factory &Factory, index u32) &ProviderDescriptor
+	create         fn (factory &Factory, indexer &Indexer, provider_id &char) &Provider
 }
 
 pub type Factory = C.clap_preset_discovery_factory_t

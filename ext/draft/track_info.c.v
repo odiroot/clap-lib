@@ -2,12 +2,12 @@ module draft
 
 import clap
 
-pub const track_info_has_track_name = u64(1 << 0)
-pub const track_info_has_track_color = u64(1 << 1)
-pub const track_info_has_audio_channel = u64(1 << 2)
-pub const track_info_is_for_return_track = u64(1 << 3)
-pub const track_info_is_for_bus = u64(1 << 4)
-pub const track_info_is_for_master = u64(1 << 5)
+pub const track_info_has_track_name = u64(C.CLAP_TRACK_INFO_HAS_TRACK_NAME)
+pub const track_info_has_track_color = u64(C.CLAP_TRACK_INFO_HAS_TRACK_COLOR)
+pub const track_info_has_audio_channel = u64(C.CLAP_TRACK_INFO_HAS_AUDIO_CHANNEL)
+pub const track_info_is_for_return_track = u64(C.CLAP_TRACK_INFO_IS_FOR_RETURN_TRACK)
+pub const track_info_is_for_bus = u64(C.CLAP_TRACK_INFO_IS_FOR_BUS)
+pub const track_info_is_for_master = u64(C.CLAP_TRACK_INFO_IS_FOR_MASTER)
 
 @[typedef]
 struct C.clap_track_info_t {

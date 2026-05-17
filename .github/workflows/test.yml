@@ -1,0 +1,30 @@
+name: Run test suite
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+concurrency:
+  group: ${{ github.workflow }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup V
+        uses: vlang/setup-v@v1.4
+        with:
+          check-latest: false
+          stable: true
+
+      - name: Run tests
+        run: |
+          mkdir -p ~/.vmodules
+          ln -s $(pwd) ~/.vmodules/clap
+          v test .

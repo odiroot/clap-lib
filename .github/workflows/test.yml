@@ -19,8 +19,7 @@ jobs:
       - name: Setup V
         uses: vlang/setup-v@v1.4
         with:
-          check-latest: false
-          stable: true
+          version: '0.5.1'
 
       - uses: actions/checkout@v4
         with:

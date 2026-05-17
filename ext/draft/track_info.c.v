@@ -9,13 +9,11 @@ pub const track_info_is_for_return_track = u64(1 << 3)
 pub const track_info_is_for_bus = u64(1 << 4)
 pub const track_info_is_for_master = u64(1 << 5)
 
-pub const clap_name_size = 256
-
 @[typedef]
 struct C.clap_track_info_t {
 pub:
 	flags              u64
-	name               [clap_name_size]u8
+	name               clap.Name
 	color              clap.Color
 	audio_channel_count int
 	audio_port_type    &char

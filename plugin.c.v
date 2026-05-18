@@ -24,10 +24,9 @@ pub:
 pub type PluginDescriptor = C.clap_plugin_descriptor_t
 
 pub fn (descriptor PluginDescriptor) id_is_compatible(id &char) bool {
-	// voidptr prevent warnings about `const char *`.
-	our_id := unsafe { cstring_to_vstring(voidptr(id)) }
-	their_id := unsafe { cstring_to_vstring(voidptr(descriptor.id)) }
-	return our_id == their_id
+	unsafe {
+		return C.strcmp(id, descriptor.id) == 0
+	}
 }
 
 @[typedef]

@@ -1,8 +1,8 @@
 @[has_globals]
 module main
 
-import clap { Host, Plugin, PluginDescriptor, PluginEntry, Process, ProcessStatus }
-import clap.factory { PluginFactory }
+import odiroot.clap { Host, Plugin, PluginDescriptor, PluginEntry, Process, ProcessStatus }
+import odiroot.clap.factory { PluginFactory }
 
 const plugin_features = [
 	clap.feature_instrument,
@@ -18,7 +18,6 @@ const plugin_descriptor = PluginDescriptor{
 	features:    voidptr(&plugin_features[0])
 }
 
-@[heap]
 struct HelloWorldPlugin {}
 
 fn HelloWorldPlugin.init(cp &Plugin) bool {
@@ -26,6 +25,14 @@ fn HelloWorldPlugin.init(cp &Plugin) bool {
 	hwp := unsafe { &HelloWorldPlugin(cp.plugin_data) }
 	eprintln('The plugin is: ${hwp}')
 	return true
+}
+
+fn HelloWorldPlugin.destroy(cp &Plugin) {
+	unsafe {
+		hwp := &HelloWorldPlugin(cp.plugin_data)
+		free(hwp)
+		free(cp)
+	}
 }
 
 fn HelloWorldPlugin.noop(cp &Plugin) {} // For the unimportant parts.
@@ -67,12 +74,12 @@ const plugin_factory = PluginFactory{
 		}
 
 		// Clap plugin envelope.
-		hwp := HelloWorldPlugin{}
+		hwp := &HelloWorldPlugin{}
 		return &Plugin{
 			desc:             &plugin_descriptor
-			plugin_data:      &hwp // Actual plugin implementation.
+			plugin_data:      hwp // Actual plugin implementation.
 			init:             HelloWorldPlugin.init
-			destroy:          HelloWorldPlugin.noop
+			destroy:          HelloWorldPlugin.destroy
 			activate:         HelloWorldPlugin.activate
 			deactivate:       HelloWorldPlugin.noop
 			start_processing: HelloWorldPlugin.start_processing

@@ -6,7 +6,8 @@ import odiroot.clap.factory { PluginFactory }
 
 const plugin_features = [
 	clap.feature_instrument,
-	unsafe { nil },
+	clap.feature_synthesizer,
+	&char(unsafe { nil }),
 ]!
 
 const plugin_descriptor = PluginDescriptor{
@@ -15,7 +16,7 @@ const plugin_descriptor = PluginDescriptor{
 	vendor:      c'Acme'
 	version:     c'1.0.0'
 	description: c'Absolutely minimal CLAP plugin'
-	features:    voidptr(&plugin_features[0])
+	features:    &plugin_features[0] // &&char → const char* const*.
 }
 
 struct HelloWorldPlugin {}

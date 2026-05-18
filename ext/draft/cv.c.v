@@ -2,7 +2,7 @@ module draft
 
 import clap
 
-pub const port_cv = unsafe { (&char(C.CLAP_PORT_CV)).vstring() }
+pub const port_cv = unsafe { (&char(C.CLAP_PORT_CV)).vstring_literal() }
 
 pub const cv_value = u32(C.CLAP_CV_VALUE)
 pub const cv_gate = u32(C.CLAP_CV_GATE)

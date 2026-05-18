@@ -2,7 +2,7 @@ module draft
 
 import clap
 
-pub const preset_discovery_factory_id = unsafe { (&char(C.CLAP_PRESET_DISCOVERY_FACTORY_ID)).vstring() }
+pub const preset_discovery_factory_id = unsafe { (&char(C.CLAP_PRESET_DISCOVERY_FACTORY_ID)).vstring_literal() }
 
 // Location kind constants
 pub const location_kind_file = u32(C.CLAP_PRESET_DISCOVERY_LOCATION_FILE)

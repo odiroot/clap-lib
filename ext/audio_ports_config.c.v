@@ -15,7 +15,7 @@ import clap
 // clap_plugin_audio_ports_config_info_t extension where all busses can be
 // retrieved in the same way as in the audio-port extension.
 
-pub const ext_audio_ports_config_info = unsafe { (&char(C.CLAP_EXT_AUDIO_PORTS_CONFIG_INFO)).vstring() }
+pub const ext_audio_ports_config_info = unsafe { (&char(C.CLAP_EXT_AUDIO_PORTS_CONFIG_INFO)).vstring_literal() }
 
 // Minimalistic description of ports configuration.
 @[typedef]

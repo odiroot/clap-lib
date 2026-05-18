@@ -2,7 +2,7 @@ module draft
 
 import clap
 
-pub const port_ambisonic = unsafe { (&char(C.CLAP_PORT_AMBISONIC)).vstring() }
+pub const port_ambisonic = unsafe { (&char(C.CLAP_PORT_AMBISONIC)).vstring_literal() }
 
 pub const ordering_fuma = u32(C.CLAP_AMBISONIC_ORDERING_FUMA)
 pub const ordering_acn = u32(C.CLAP_AMBISONIC_ORDERING_ACN)

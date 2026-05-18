@@ -2,8 +2,8 @@ module ext
 
 import clap
 
-pub const port_mono = unsafe { (&char(C.CLAP_PORT_MONO)).vstring() }
-pub const port_stereo = unsafe { (&char(C.CLAP_PORT_STEREO)).vstring() }
+pub const port_mono = unsafe { (&char(C.CLAP_PORT_MONO)).vstring_literal() }
+pub const port_stereo = unsafe { (&char(C.CLAP_PORT_STEREO)).vstring_literal() }
 
 // This port is the main audio input or output.
 // There can be only one main input and main output.

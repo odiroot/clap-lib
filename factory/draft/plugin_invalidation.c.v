@@ -1,6 +1,6 @@
 module draft
 
-pub const plugin_invalidation_factory_id = unsafe { (&char(C.CLAP_PLUGIN_INVALIDATION_FACTORY_ID)).vstring() }
+pub const plugin_invalidation_factory_id = unsafe { (&char(C.CLAP_PLUGIN_INVALIDATION_FACTORY_ID)).vstring_literal() }
 
 @[typedef]
 struct C.clap_plugin_invalidation_source_t {

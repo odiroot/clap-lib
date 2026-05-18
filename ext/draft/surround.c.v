@@ -21,7 +21,7 @@ pub const surround_tbl = int(C.CLAP_SURROUND_TBL)
 pub const surround_tbc = int(C.CLAP_SURROUND_TBC)
 pub const surround_tbr = int(C.CLAP_SURROUND_TBR)
 
-pub const port_surround = unsafe { (&char(C.CLAP_PORT_SURROUND)).vstring() }
+pub const port_surround = unsafe { (&char(C.CLAP_PORT_SURROUND)).vstring_literal() }
 
 @[typedef]
 struct C.clap_plugin_surround_t {

@@ -12,15 +12,15 @@ import clap
 
 // Uses physical size.
 // Embed using https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setparent
-pub const window_api_win32 = unsafe { (&char(C.CLAP_WINDOW_API_WIN32)).vstring() }
+pub const window_api_win32 = unsafe { (&char(C.CLAP_WINDOW_API_WIN32)).vstring_literal() }
 // Uses logical size, don't call clap_plugin_gui.set_scale()
-pub const window_api_cocoa = unsafe { (&char(C.CLAP_WINDOW_API_COCOA)).vstring() }
+pub const window_api_cocoa = unsafe { (&char(C.CLAP_WINDOW_API_COCOA)).vstring_literal() }
 // Uses physical size
 // Embed using https://specifications.freedesktop.org/xembed-spec/xembed-spec-latest.html
-pub const window_api_x11 = unsafe { (&char(C.CLAP_WINDOW_API_X11)).vstring() }
+pub const window_api_x11 = unsafe { (&char(C.CLAP_WINDOW_API_X11)).vstring_literal() }
 // Uses physical size.
 // Embed is currently not supported, use floating windows.
-pub const window_api_wayland = unsafe { (&char(C.CLAP_WINDOW_API_WAYLAND)).vstring() }
+pub const window_api_wayland = unsafe { (&char(C.CLAP_WINDOW_API_WAYLAND)).vstring_literal() }
 
 type HWnd = voidptr
 type NSView = voidptr

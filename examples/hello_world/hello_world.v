@@ -23,8 +23,7 @@ struct HelloWorldPlugin {}
 fn HelloWorldPlugin.init(cp &Plugin) bool {
 	// Unwrap the plugin implementation from clap envelope.
 	hwp := unsafe { &HelloWorldPlugin(cp.plugin_data) }
-	eprintln('The plugin is: ${hwp}')
-	return true
+	return hwp != unsafe { nil }
 }
 
 fn HelloWorldPlugin.destroy(cp &Plugin) {
